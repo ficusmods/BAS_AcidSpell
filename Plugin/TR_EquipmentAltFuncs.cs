@@ -55,7 +55,6 @@ namespace AcidSpell
             var content = GetWornContent(creature, key.channel, key.layer);
             if (content != null)
             {
-                creature.equipment.UnequipWardrobe(content, false);
                 ItemModuleWardrobe module = content.itemData.GetModule<ItemModuleWardrobe>();
                 if (module != null)
                 {
