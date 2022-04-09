@@ -197,10 +197,23 @@ namespace AcidSpell
             }
         }
 
+        private static bool IsCreatureDismembered(Creature c)
+        {
+            foreach(RagdollPart rp in c.ragdoll.parts)
+            {
+                if(rp.isSliced)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public static void DamagePart(Collider collider, RagdollPart rpart, float dmg)
         {
             Creature creature = rpart.ragdoll.creature;
             if (creature.isPlayer) return;
+            if (IsCreatureDismembered(creature)) return;
 
             List<string> channels = LUT.mapRagdollPart2ManikinChannels[rpart.type];
             foreach (string channel in channels)
