@@ -51,7 +51,7 @@ namespace AcidSpell
 
         public static void RemoveWardrobeItem(Creature creature, ManikinLocations.LocationKey key)
         {
-            Logger.Detailed("Removing manikin part: {0}, {1}", key.channel, key.layer);
+            Logger.Detailed("Removing wardrobe item: {0}, {1}", key.channel, key.layer);
             var content = GetWornContent(creature, key.channel, key.layer);
             if (content != null)
             {
@@ -71,6 +71,7 @@ namespace AcidSpell
                         {
                             if (GetWornContent(creature, currChannel, currLayer) != null)
                             {
+                                Logger.Detailed("Removing manikin part: {0}, {1}", currChannel, currLayer);
                                 creature.manikinLocations.RemovePart(currChannel, currLayer);
                                 flag = true;
                             }
