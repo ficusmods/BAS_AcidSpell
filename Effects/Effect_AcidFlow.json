@@ -268,7 +268,7 @@
       "mainColorEnd": {
         "r": 0.0,
         "g": 0.7735849,
-        "b": 0.232759878,
+        "b": 0.42759878,
         "a": 1.0
       },
       "secondaryColorStart": {
@@ -292,7 +292,7 @@
       "mainNoHdrColorEnd": {
         "r": 0.0,
         "g": 0.7735849,
-        "b": 0.232759878,
+        "b": 0.42759878,
         "a": 1.0
       },
       "secondaryNoHdrColorStart": {
