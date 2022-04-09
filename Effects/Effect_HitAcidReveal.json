@@ -1,0 +1,84 @@
+{
+  "$type": "ThunderRoad.EffectData, ThunderRoad",
+  "id": "HitAcidSpellReveal",
+  "saveFolder": "bas",
+  "version": 0,
+  "groupId": "Magic",
+  "volumeDb": 0.0,
+  "modules": [
+    {
+      "$type": "ThunderRoad.EffectModuleReveal, ThunderRoad",
+      "maskTextureAddress": "Bas.Texture.RevealMask.FleshBurn",
+      "applyOn": "Target",
+      "typeFilter": "Default, Body, Outfit",
+      "depth": 1.2,
+      "minSize": 0.08,
+      "maxSize": 0.12,
+      "penetrationSize": 0.1,
+      "minChannelMultiplier": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0,
+        "w": 1.0
+      },
+      "maxChannelMultiplier": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0,
+        "w": 1.0
+      },
+      "penetrationChannelMultiplier": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0,
+        "w": 1.0
+      },
+      "offsetDistance": 0.04,
+      "allowItem": false,
+      "allowRagdollPart": true,
+      "revealData": [
+        {
+          "$type": "RainyReignGames.RevealMask.RevealData, RainyReignGames.Reveal",
+          "blendOp": "ReverseSubtract",
+          "colorMask": "Alpha",
+          "delay": 0.0,
+          "overTime": 2.0,
+          "deltaMultiplier": 1.0,
+          "widthMultiplier": 1.0,
+          "heightMultiplier": 1.0,
+          "overTimeRenderTextureFormat": "ARGB32",
+          "generateMipMaps": false,
+          "swizzleAlphaRed": false,
+          "overTimeSwizzleColorMask": "Red"
+        },
+        {
+          "$type": "RainyReignGames.RevealMask.RevealData, RainyReignGames.Reveal",
+          "blendOp": "Add",
+          "colorMask": "All",
+          "delay": 0.0,
+          "overTime": 0.0,
+          "deltaMultiplier": 0.0,
+          "widthMultiplier": 1.0,
+          "heightMultiplier": 1.0,
+          "overTimeRenderTextureFormat": "ARGB32",
+          "generateMipMaps": false,
+          "swizzleAlphaRed": false,
+          "overTimeSwizzleColorMask": "Red"
+        }
+      ],
+      "step": "Start",
+      "stepCustomId": null,
+      "plateformFilter": "Windows, Android",
+      "isGore": true,
+      "damagerStateFilter": "Inactive, Active",
+      "damageTypeFilter": "Energy, Blunt, Slash, Pierce",
+      "penetrationFilter": "None, Pressure, Hit",
+      "imbuesFilterLogic": "AnyExcept",
+      "imbuesFilter": [],
+      "colliderGroupFilterLogic": "AnyExcept",
+      "colliderGroupsFilter": [],
+      "damagersFilterLogic": "AnyExcept",
+      "damagersFilter": []
+    }
+  ]
+}

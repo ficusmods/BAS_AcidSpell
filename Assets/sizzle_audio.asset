@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5389a61272ad22e43876a35218ae76fb, type: 3}
+  m_Name: sizzle_audio
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 9b6c02cda3842d949a14fc5502b9cc74, type: 3}
+  - {fileID: 8300000, guid: 8cfe9ffb815d4db499a7ed3bbf266dc3, type: 3}
+  - {fileID: 8300000, guid: 509d54f4b7a21504598ed314fa218d67, type: 3}
+  - {fileID: 8300000, guid: e3daa9d13990ffa42b4427f5fcc394c1, type: 3}
+  - {fileID: 8300000, guid: b365f7514728b064faebb7ea433ea135, type: 3}
+  - {fileID: 8300000, guid: 4f9bf42d8f08be3409c3b1a05191db56, type: 3}
+  - {fileID: 8300000, guid: a3fdc1f100cd28a43a33b52894a96303, type: 3}
