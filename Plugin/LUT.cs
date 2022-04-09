@@ -49,5 +49,15 @@ namespace AcidSpell
             { "Legs", new HashSet<int>{ 3 } },
             { "Feet", new HashSet<int>{ } }
         };
+
+        public static Dictionary<string, HashSet<string>> mapManikinChannel2UnequipExclusionSet = new Dictionary<string, HashSet<string>>()
+        {
+            { "Head", new HashSet<string>{ } },
+            { "Torso", new HashSet<string>{ "Legs" } },
+            { "HandLeft", new HashSet<string>{ } },
+            { "HandRight", new HashSet<string>{ } },
+            { "Legs", new HashSet<string>{ "Torso" } },
+            { "Feet", new HashSet<string>{ } }
+        };
     }
 }

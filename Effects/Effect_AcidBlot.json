@@ -9,7 +9,7 @@
     {
       "$type": "ThunderRoad.EffectModuleDecal, ThunderRoad",
       "materialAddress": "Bas.Decal.LiquidBlot",
-      "baseLifeTime": 30.0,
+      "baseLifeTime": 10.0,
       "emissionLifeTime": 10.0,
       "fadeRefreshSpeed": 0.05,
       "priority": 0,
@@ -50,19 +50,19 @@
         "preWrapMode": "ClampForever",
         "postWrapMode": "ClampForever"
       },
-      "linkBaseColor": "None",
+      "linkBaseColor": "Main",
       "linkEmissionColor": "None",
       "mainColorStart": {
         "r": 0.0,
-        "g": 0.0,
-        "b": 0.0,
-        "a": 0.0
+        "g": 0.7735849,
+        "b": 0.232759878,
+        "a": 1.0
       },
       "mainColorEnd": {
         "r": 0.0,
-        "g": 0.0,
-        "b": 0.0,
-        "a": 0.0
+        "g": 0.7735849,
+        "b": 0.42759878,
+        "a": 1.0
       },
       "secondaryColorStart": {
         "r": 0.0,
@@ -78,15 +78,15 @@
       },
       "mainNoHdrColorStart": {
         "r": 0.0,
-        "g": 0.0,
-        "b": 0.0,
-        "a": 0.0
+        "g": 0.7735849,
+        "b": 0.232759878,
+        "a": 1.0
       },
       "mainNoHdrColorEnd": {
         "r": 0.0,
-        "g": 0.0,
-        "b": 0.0,
-        "a": 0.0
+        "g": 0.7735849,
+        "b": 0.42759878,
+        "a": 1.0
       },
       "secondaryNoHdrColorStart": {
         "r": 0.0,

@@ -64,10 +64,16 @@ namespace AcidSpell
                     bool flag = false;
                     for (int index = 0; index < wardrobe.manikinWardrobeData.channels.Length; ++index)
                     {
-                        if (GetWornContent(creature, wardrobe.manikinWardrobeData.channels[index], wardrobe.manikinWardrobeData.layers[index]) != null)
+                        string currChannel = wardrobe.manikinWardrobeData.channels[index];
+                        int currLayer = wardrobe.manikinWardrobeData.layers[index];
+
+                        if (!LUT.mapManikinChannel2UnequipExclusionSet[currChannel].Contains(currChannel))
                         {
-                            creature.manikinLocations.RemovePart(wardrobe.manikinWardrobeData.channels[index], wardrobe.manikinWardrobeData.layers[index]);
-                            flag = true;
+                            if (GetWornContent(creature, currChannel, currLayer) != null)
+                            {
+                                creature.manikinLocations.RemovePart(currChannel, currLayer);
+                                flag = true;
+                            }
                         }
                     }
                     if (flag)
