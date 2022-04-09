@@ -38,18 +38,30 @@ namespace AcidSpell
                 roomChangeWatcher.onRoomChanged += RoomChangeWatcher_onRoomChanged;
 
 
-                void DespawnHandler(EventTime t)
+                void DespawnHandler(EventTime eventTime)
                 {
-                    if (t == EventTime.OnStart)
+                    if (eventTime == EventTime.OnStart)
                     {
                         Logger.Detailed("Creature {0} ({1}, {2}) despawned", creature.name, creature.creatureId, creature.GetInstanceID());
+                        GameObject.Destroy(creature.gameObject.GetComponent<CreatureRoomChangeWatcher>());
                         resetIntegrityForCreature(creature);
                         creature.equipment.EquipAllWardrobes(false, false);
                     }
                 
                 }
+
+                void KillHandler(CollisionInstance collisionInstance, EventTime eventTime)
+                {
+                    if (eventTime == EventTime.OnEnd)
+                    {
+                        resetIntegrityForCreature(creature);
+                    }
+                }
+
                 creature.OnDespawnEvent -= DespawnHandler;
                 creature.OnDespawnEvent += DespawnHandler;
+                creature.OnKillEvent -= KillHandler;
+                creature.OnKillEvent += KillHandler;
             }
         }
 
@@ -67,7 +79,6 @@ namespace AcidSpell
             LayerMask collisionLayer =
                1 << GameManager.GetLayer(LayerName.Default)
              | 1 << GameManager.GetLayer(LayerName.NPC)
-             | 1 << GameManager.GetLayer(LayerName.BodyLocomotion)
              | 1 << GameManager.GetLayer(LayerName.MovingItem)
              | 1 << GameManager.GetLayer(LayerName.ItemAndRagdollOnly)
              | 1 << GameManager.GetLayer(LayerName.Ragdoll);
@@ -175,11 +186,15 @@ namespace AcidSpell
             }
         }
 
-        private static void DoCollisionWithCreature(Creature creature, Collider collider, float dmg)
+        private static void DoCollisionWithCreature(Creature creature, Collider collider, RagdollPart rpart, float dmg)
         {
-            CollisionInstance collisionInstance = new CollisionInstance(new DamageStruct(DamageType.Energy, dmg));
-            collisionInstance.targetColliderGroup = collider.GetComponentInParent<ColliderGroup>();
-            creature.Damage(collisionInstance);
+            if (dmg > 0.0f)
+            {
+                CollisionInstance collisionInstance = new CollisionInstance(new DamageStruct(DamageType.Energy, dmg));
+                collisionInstance.damageStruct.hitRagdollPart = rpart;
+                collisionInstance.targetColliderGroup = collider.GetComponentInParent<ColliderGroup>();
+                creature.Damage(collisionInstance);
+            }
         }
 
         public static void DamagePart(Collider collider, RagdollPart rpart, float dmg)
@@ -208,7 +223,7 @@ namespace AcidSpell
                 }
             }
 
-            DoCollisionWithCreature(creature, collider, Config.acidDamage);
+            DoCollisionWithCreature(creature, collider, rpart, Config.acidDamage);
 
             if(rpart.type == RagdollPart.Type.LeftHand || rpart.type == RagdollPart.Type.RightHand)
             {
