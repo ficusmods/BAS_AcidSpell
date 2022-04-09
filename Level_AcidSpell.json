@@ -12,7 +12,7 @@
           "mod_name": "AcidSpell",
           "logger_level": "Basic",
           "AcidDamage": 0.000001,
-          "AcidIntegrityDamage": 0.0015,
+          "AcidIntegrityDamage": 0.01,
           "AcidIntegrityThreshold": 0.40,
           "EnableWoundDecals": true,
           "EnableEffects": true,
