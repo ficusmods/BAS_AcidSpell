@@ -10,7 +10,7 @@ namespace AcidSpell
     {
         public static bool dissolveUnderwear = false;
         public static float acidDamage = 0.000001f;
-        public static float acidIntegrityDamage = 0.003f;
+        public static float acidIntegrityDamage = 0.01f;
         public static float integrityThreshold = 0.40f;
         public static bool enableWoundDecals = true;
         public static bool enableEffects = true;

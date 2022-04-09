@@ -108,7 +108,10 @@ namespace AcidSpell
                     
                     foreach (EffectParticleChild child in effectParticle.childs)
                     {
-                        particleSystem.gameObject.AddComponent<AcidCollisionHandler>();
+                        if (particleSystem.gameObject.GetComponent<AcidCollisionHandler>() == null)
+                        {
+                            particleSystem.gameObject.AddComponent<AcidCollisionHandler>();
+                        }
                         var collision = particleSystem.collision;
                         collision.collidesWith = collisionLayer;
                     }
