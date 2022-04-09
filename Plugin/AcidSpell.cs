@@ -175,7 +175,14 @@ namespace AcidSpell
             }
         }
 
-        public static void DamagePart(RagdollPart rpart, float dmg)
+        private static void DoCollisionWithCreature(Creature creature, Collider collider, float dmg)
+        {
+            CollisionInstance collisionInstance = new CollisionInstance(new DamageStruct(DamageType.Energy, dmg));
+            collisionInstance.targetColliderGroup = collider.GetComponentInParent<ColliderGroup>();
+            creature.Damage(collisionInstance);
+        }
+
+        public static void DamagePart(Collider collider, RagdollPart rpart, float dmg)
         {
             Creature creature = rpart.ragdoll.creature;
             if (creature.isPlayer) return;
@@ -201,17 +208,19 @@ namespace AcidSpell
                 }
             }
 
+            DoCollisionWithCreature(creature, collider, Config.acidDamage);
+
             if(rpart.type == RagdollPart.Type.LeftHand || rpart.type == RagdollPart.Type.RightHand)
             {
-                DamageItem(creature.handLeft?.grabbedHandle?.item, dmg);
+                DamageItem(collider, creature.handLeft?.grabbedHandle?.item, dmg);
             }
             else if (rpart.type == RagdollPart.Type.RightHand)
             {
-                DamageItem(creature.handRight?.grabbedHandle?.item, dmg);
+                DamageItem(collider, creature.handRight?.grabbedHandle?.item, dmg);
             }
         }
 
-        public static void DamageItem(Item item, float dmg)
+        public static void DamageItem(Collider collider, Item item, float dmg)
         {
             if (item != null)
             {

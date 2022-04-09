@@ -25,7 +25,11 @@ namespace AcidSpell
             get => Config.dissolveUnderwear;
             set => Config.dissolveUnderwear = value;
         }
-
+        public float AcidDamage
+        {
+            get => Config.acidDamage;
+            set => Config.acidDamage = value;
+        }
         public float AcidIntegrityDamage
         {
             get => Config.acidIntegrityDamage;

@@ -68,14 +68,14 @@ namespace AcidSpell
                 Item item = collider.attachedRigidbody?.GetComponentInChildren<Item>();
                 if (rpart != null)
                 {
-                    AcidSpell.DamagePart(rpart, Config.acidIntegrityDamage);
+                    AcidSpell.DamagePart(collider, rpart, Config.acidIntegrityDamage);
                     PlayBodyHitRevealEffect(collider, collisionEvents[i].intersection, collisionEvents[i].normal);
                     PlayHitEffect(collider, collisionEvents[i].intersection);
                     break;
                 }
                 else if(item != null)
                 {
-                    AcidSpell.DamageItem(item, Config.acidIntegrityDamage);
+                    AcidSpell.DamageItem(collider, item, Config.acidIntegrityDamage);
                     PlayHitEffect(collider, collisionEvents[i].intersection);
                     break;
                 }

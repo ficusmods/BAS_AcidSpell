@@ -36,6 +36,7 @@
           "mod_version": "1.0",
           "mod_name": "AcidSpell",
           "logger_level": "Basic",
+          "AcidDamage": 0.000001,
           "AcidIntegrityDamage": 0.0015,
 		  "AcidIntegrityThreshold": 0.40,
 		  "EnableWoundDecals": true,
