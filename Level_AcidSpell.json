@@ -1,35 +1,10 @@
 {
   "$type": "ThunderRoad.LevelData, ThunderRoad",
   "id": "Master",
-  "saveFolder": "Bas",
   "version": 3,
-  "name": null,
-  "description": null,
-  "spawnPlayer": false,
-  "spawnBody": false,
-  "sceneAddress": null,
-  "showInLevelSelection": true,
-  "dungeonFlowAddresses": null,
-  "mapId": "default",
-  "mapLocation": null,
-  "mapIconAddress": "Bas.Icon.MapPinDefault",
-  "mapIconHoverAddress": "Bas.Icon.MapPinHoverDefault",
-  "mapNameDisplay": "Blade & Sorcery",
-  "showOnMap": true,
-  "hideOnAndroid": false,
-  "mapObjectAddress": "Bas.Icon.MapDefaultObject",
-  "mapTextureAddress": "Bas.Icon.MapDefaultTexture",
-  "iconAddress": null,
-  "mapSketchAddress": null,
   "modes": [
     {
-      "$type": "ThunderRoad.LevelData+Mode, ThunderRoad",
       "name": "Default",
-      "displayName": "{Default}",
-      "description": "{NoDescription}",
-      "allowGameModes": null,
-      "mapOrder": 0,
-      "difficultyMultipliers": null,
       "modules": [
         {
           "$type": "AcidSpell.LoadModule, AcidSpell",
@@ -38,15 +13,12 @@
           "logger_level": "Basic",
           "AcidDamage": 0.000001,
           "AcidIntegrityDamage": 0.0015,
-		  "AcidIntegrityThreshold": 0.40,
-		  "EnableWoundDecals": true,
-		  "EnableEffects": true,
-		  "DissolveUnderwear": false
+          "AcidIntegrityThreshold": 0.40,
+          "EnableWoundDecals": true,
+          "EnableEffects": true,
+          "DissolveUnderwear": false
         }
-      ],
-      "availableOptions": []
+      ]
     }
-  ],
-  "modePickCountPerRank": 2,
-  "customCameras": null
+  ]
 }
