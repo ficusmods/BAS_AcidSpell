@@ -19,14 +19,29 @@ namespace AcidSpell
             { RagdollPart.Type.Head, new List<string>{ "Head" } },
             { RagdollPart.Type.Neck, new List<string>{ "Head" } },
             { RagdollPart.Type.Torso, new List<string>{ "Torso", "HandLeft", "HandRight" } },
-            { RagdollPart.Type.LeftArm, new List<string>{ "Torso", "HandLeft" } },
+            { RagdollPart.Type.LeftArm, new List<string>{ "Torso" } },
             { RagdollPart.Type.LeftHand, new List<string>{ "HandLeft" } },
             { RagdollPart.Type.LeftLeg, new List<string>{ "Legs" } },
-            { RagdollPart.Type.LeftFoot, new List<string>{ "Legs", "Feet", } },
-            { RagdollPart.Type.RightArm, new List<string>{ "Torso", "HandRight" } },
+            { RagdollPart.Type.LeftFoot, new List<string>{ "Feet" } },
+            { RagdollPart.Type.RightArm, new List<string>{ "Torso" } },
             { RagdollPart.Type.RightHand, new List<string>{ "HandRight" } },
-            { RagdollPart.Type.RightLeg, new List<string>{ "Legs", "Feet" } },
+            { RagdollPart.Type.RightLeg, new List<string>{ "Legs" } },
             { RagdollPart.Type.RightFoot, new List<string>{ "Feet" } },
+        };
+
+        public static Dictionary<RagdollPart.Type, List<string>> mapRagdollPart2ReducedDmgManikinChannels = new Dictionary<RagdollPart.Type, List<string>>()
+        {
+            { RagdollPart.Type.Head, new List<string>{ } },
+            { RagdollPart.Type.Neck, new List<string>{ } },
+            { RagdollPart.Type.Torso, new List<string>{ } },
+            { RagdollPart.Type.LeftArm, new List<string>{ "HandLeft" } },
+            { RagdollPart.Type.LeftHand, new List<string>{ } },
+            { RagdollPart.Type.LeftLeg, new List<string>{ "Feet" } },
+            { RagdollPart.Type.LeftFoot, new List<string>{ } },
+            { RagdollPart.Type.RightArm, new List<string>{ "HandRight" } },
+            { RagdollPart.Type.RightHand, new List<string>{ } },
+            { RagdollPart.Type.RightLeg, new List<string>{ "Feet" } },
+            { RagdollPart.Type.RightFoot, new List<string>{ } },
         };
 
         public static Dictionary<string, Tuple<int, int>> mapManikinChannel2ArmorLayerRange = new Dictionary<string, Tuple<int, int>>()

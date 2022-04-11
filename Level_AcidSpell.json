@@ -13,6 +13,7 @@
           "logger_level": "Basic",
           "AcidDamage": 0.000001,
           "AcidIntegrityDamage": 0.01,
+          "AdjacentPartIntegrityDamageFactor": 0.5,
           "AcidIntegrityThreshold": 0.40,
           "EnableWoundDecals": true,
           "EnableEffects": true,

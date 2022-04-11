@@ -36,6 +36,12 @@ namespace AcidSpell
             set => Config.acidIntegrityDamage = value;
         }
 
+        public float AdjacentPartIntegrityDamageFactor
+        {
+            get => Config.adjacentPartIntegrityDamageFactor;
+            set => Config.adjacentPartIntegrityDamageFactor = value;
+        }
+
         public float AcidIntegrityThreshold
         {
             get => Config.integrityThreshold;

@@ -239,6 +239,27 @@ namespace AcidSpell
                 }
             }
 
+            List<string> reducedDmgChannels = LUT.mapRagdollPart2ReducedDmgManikinChannels[rpart.type];
+            foreach (string reducedDmgChannel in reducedDmgChannels)
+            {
+                Tuple<int, int> armorIndexes = LUT.mapManikinChannel2ArmorLayerRange[reducedDmgChannel];
+                int armorIndex;
+                for (armorIndex = armorIndexes.Item1; armorIndex <= armorIndexes.Item2; armorIndex++)
+                {
+                    var key = new ManikinLocations.LocationKey(reducedDmgChannel, armorIndex);
+                    ManikinPart mpart = creature.manikinLocations.GetPartAtLocation(key);
+
+                    if (mpart != null)
+                    {
+                        if (!TR_EquipmentAltFuncs.isUnderWear(key) || Config.dissolveUnderwear)
+                        {
+                            DamagePartIntegrity(creature, key, dmg * Config.adjacentPartIntegrityDamageFactor);
+                        }
+                        break;
+                    }
+                }
+            }
+
             DoCollisionWithCreature(creature, collider, rpart, Config.acidDamage);
 
             if(rpart.type == RagdollPart.Type.LeftHand || rpart.type == RagdollPart.Type.RightHand)
